@@ -27,9 +27,10 @@ input[type=submit] {
     border-radius: 30px;
     color: aliceblue;
 }
+
 span[class="required"] {
     color: #da0606;
-}
+}    
 </style>
 
 </head>
@@ -39,17 +40,18 @@ span[class="required"] {
             <div class="col">         
                 <form name="submit-to-google-sheet">
                                     <center><img src="https://drive.google.com/uc?export=view&id=1WTcS6yQoFEWiXVsTmJoqjHzmGzNMnjc4" width="200px" height="auto" alt="image"></center>
-                                    <p class="h4 mb-4 text-center">Borang Tempahan Bilik Mesyuarat</p>
+                                    <p class="h4 mb-4 text-center">Borang Pembatalan Tempahan Bilik Mesyuarat</p>
         
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
-                                            <label for="first_name">Nama Pemohon:</label>
+                                            <label for="first_name">Nama:</label>
                                             <span class="required">*</span>
-                                            <input type="text" class="form-control" id="first_name" name="Nama Pemohon" placeholder="Nama" required>
+                                            <input type="text" class="form-control" id="first_name" name="name Pembatal" placeholder="nama" required>
                                         </div>
                                         <div class="form-group col-md-6">
-                                            <label for="last_name">Cawangan/Unit:</label>
-                                            <input type="text" class="form-control" id="last_name" name="Cawangan/Unit" placeholder="">
+                                            <label for="dateOfBirth">Tarikh Pembatalan:</label>
+                                            <span class="required">*</span>
+                                            <input type="date" class="form-control" id="dateOfBirth" name="Tarikh Pembatalan" required>
                                         </div>
                                     </div>
                                     <div class="form-row">
@@ -57,52 +59,20 @@ span[class="required"] {
                                         <div class="form-group col-md-6">
                                             <label for="phone">No. Tel.:</label>
                                             <span class="required">*</span>
-                                            <input type="tel" class="form-control" id="phone" name="No.Tel" placeholder="019xxxxxxx" required>
+                                            <input type="tel" class="form-control" id="phone" name="No.Tel Pembatal" placeholder="019xxxxxxx" required>
                                         </div> 
                                         <div class="form-group col-md-6">
-                                            <label for="email">E-mail:</label>
+                                            <label for="email">Email:</label>
                                             <span class="required">*</span>
-                                            <input type="email" class="form-control" id="email" name="E-mail" placeholder="Email" required>
+                                            <input type="email" class="form-control" id="email" name="email Pembatal" placeholder="Email" required>
                                         </div>      
                                     </div>
 
-                                    <div class="form-row">
-                                        <div class="form-group col-md-6">
-                                            <label for="dateOfBirth">Tarikh:</label>
-                                            <span class="required">*</span>
-                                            <input type="date" class="form-control" id="dateOfBirth" name="Tarikh" required>
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label for="last_name">Masa:</label>
-                                            <span class="required">*</span>
-                                            <input type="time" class="form-control" id="time" name="Waktu" placeholder="" required>
-                                        </div>         
-                                    </div>
-        
-                                    <div class="form-row">
-                                        <div class="form-group col-md-6">
-                                            <label for="last_name">Bilik mesyuarat yang ingin ditempah:</label>
-                                            <span class="required">*</span><br>
-                                            <select class="form-select form-select-lg mb-6" aria-label=".form-select-lg example" name="Bilik Mesyuarat" id="BM" required>
-                                                <option value="BM1">BM1</option>
-                                                <option value="BM2">BM2</option>
-                                                <option value="BM3">BM3</option>
-                                                <option value="BM4">BM4</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label for="first_name">Tajuk Mesyuarat/ Taklimat/ Kursus/ Bengkel:</label>
-                                            <span class="required">*</span>
-                                            <input type="text" class="form-control" id="first_name" name="Tajuk Mesyuarat/ Taklimat/ Kursus/ Bengkel" placeholder="" required>
-                                        </div>  
-                                    </div>
-                                    <div class="form-row">
-                                        <label for="last_name">lain-lain keperluan tambahan yang diperlukan(Nyatakan):</label>
-                                        <input type="text" class="form-control" id="lain" name="lain" placeholder="Cth: Komputer Riba, Papan Putih, Projektor LCD/DLP">
-                                    </div>
-                                    <br>
-                                                    
-                    <center><input type="submit" name="submit" value="Hantar"></center><br>
+                                    <label>Sebab Pembatalan:</label>
+                                    <span class="required">*</span>
+                                    <input type="text" class="form-control" name="Sebab Pembatalan" placeholder="Nyatakan" required>
+                                    </input><br><br>
+                                    <center><input type="submit" name="submit" value="Hantar"></center>
                     <center><span id="success" style="color: aliceblue; background-color: #14bd76;"></span></center>
                 </form>
             </div>
@@ -110,7 +80,7 @@ span[class="required"] {
     </div>
     
     <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbzMECehmTRJ1_gmWK9K0Ol_LKcUh0LRTew5KMLc7LCslcVvo-UPbToHeyrsodWgHpFPwA/exec'
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwm_UHIkvN42Fw7aPVEamaYPcfm93iY3hRcc7Cit3XmUqv4d215fTGif7zxMQj8zTWV/exec'
         const form = document.forms['submit-to-google-sheet']
         const success = document.getElementById('success');
         form.addEventListener('submit', e => {
