@@ -30,7 +30,46 @@ input[type=submit] {
 
 span[class="required"] {
     color: #da0606;
-}    
+}  
+
+.loader{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content:  center;
+    align-items: center;
+    background-color: #f7f9fb;
+    transition: opacity 0.75s, visibility 0.75s;
+}
+
+.loader-hidden{
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader::after{
+    content: "";
+    width: 75px;
+    height: 75px;
+    border: 15px solid #dddddd;
+    border-top-color: #7449f5;
+    border-radius: 50%;
+    animation: loading 0.7s ease infinite;
+}
+
+@keyframes loading {
+    from{
+        transform: rotate(0turn);
+    }
+    to{
+        transform: rotate(1turn);
+    }
+}
+
+
 </style>
 
 </head>
@@ -46,12 +85,16 @@ span[class="required"] {
                                         <div class="form-group col-md-6">
                                             <label for="first_name">Nama:</label>
                                             <span class="required">*</span>
-                                            <input type="text" class="form-control" id="first_name" name="name Pembatal" placeholder="nama" required>
+                                            <input type="text" class="form-control" id="first_name" name="name Pembatal" placeholder="nama" required
+                                            oninvalid="setCustomValidity('Sila isi bahagian ini')"
+                                            oninput="setCustomValidity('')" />
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label for="dateOfBirth">Tarikh Pembatalan:</label>
                                             <span class="required">*</span>
-                                            <input type="date" class="form-control" id="dateOfBirth" name="Tarikh Pembatalan" required>
+                                            <input type="date" class="form-control" id="dateOfBirth" name="Tarikh Pembatalan" required
+                                            oninvalid="setCustomValidity('Sila isi bahagian ini')"
+                                            oninput="setCustomValidity('')" />
                                         </div>
                                     </div>
                                     <div class="form-row">
@@ -59,26 +102,33 @@ span[class="required"] {
                                         <div class="form-group col-md-6">
                                             <label for="phone">No. Tel.:</label>
                                             <span class="required">*</span>
-                                            <input type="tel" class="form-control" id="phone" name="No.Tel Pembatal" placeholder="019xxxxxxx" required>
+                                            <input type="tel" class="form-control" id="phone" name="No.Tel Pembatal" placeholder="019xxxxxxx" required
+                                            oninvalid="setCustomValidity('Sila isi bahagian ini')"
+                                            oninput="setCustomValidity('')" />
                                         </div> 
                                         <div class="form-group col-md-6">
                                             <label for="email">Email:</label>
                                             <span class="required">*</span>
-                                            <input type="email" class="form-control" id="email" name="email Pembatal" placeholder="Email" required>
+                                            <input type="email" class="form-control" id="email" name="email Pembatal" placeholder="Email" required
+                                            oninvalid="setCustomValidity('Sila isi bahagian ini')"
+                                            oninput="setCustomValidity('')" />
                                         </div>      
                                     </div>
 
                                     <label>Sebab Pembatalan:</label>
                                     <span class="required">*</span>
-                                    <input type="text" class="form-control" name="Sebab Pembatalan" placeholder="Nyatakan" required>
+                                    <input type="text" class="form-control" name="Sebab Pembatalan" placeholder="Nyatakan" required
+                                        oninvalid="setCustomValidity('Sila isi bahagian ini')"
+                                        oninput="setCustomValidity('')" />
                                     </input><br><br>
                                     <center><input type="submit" name="submit" value="Hantar"></center>
                     <center><span id="success" style="color: aliceblue; background-color: #14bd76;"></span></center>
+                    <div class="loader"></div>
                 </form>
             </div>
         </div>
     </div>
-    
+        
     <script>
         const scriptURL = 'https://script.google.com/macros/s/AKfycbwm_UHIkvN42Fw7aPVEamaYPcfm93iY3hRcc7Cit3XmUqv4d215fTGif7zxMQj8zTWV/exec'
         const form = document.forms['submit-to-google-sheet']
@@ -96,6 +146,16 @@ span[class="required"] {
                 form.reset();
             })
             .catch(error => console.error('Error!', error.message))
+        })
+    
+        window.addEventListener("load", () => {
+            const loader = document.querySelector(".loader");
+
+            loader.classList.add("loader-hidden");
+
+            loader.addEventListener("transtionernd", () => {
+                document.body.removeChild("loader");
+            })
         })
     </script>      
 </body>
