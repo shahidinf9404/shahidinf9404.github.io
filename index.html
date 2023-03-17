@@ -76,32 +76,32 @@ span[class="required"] {
             <div class="col">         
                 <form id="myForm" onsubmit="handleFormSubmit()" name="submit-to-google-sheet">
                                     <center><img src="https://drive.google.com/uc?export=view&id=1WTcS6yQoFEWiXVsTmJoqjHzmGzNMnjc4" width="200px" height="auto" alt="image"></center>
-                                    <p class="h4 mb-4 text-center">Borang Tempahan Bilik Mesyuarat</p>
+                                    <p class="h4 mb-4 text-center">Borang Tempahan Bilik Mesyuarat<br>Program Perubatan</p>
         
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
-                                            <label for="first_name">Nama Pemohon:</label>
+                                            <label for="first_name" class="h6 mb-7">Nama Pemohon:</label>
                                             <span class="required">*</span>
                                             <input type="text" class="form-control" id="first_name" name="Nama Pemohon" placeholder="" required 
                                             oninvalid="setCustomValidity('Sila isi bahagian ini')"
                                             oninput="setCustomValidity('')" />
                                         </div>
                                         <div class="form-group col-md-6">
-                                            <label for="last_name">Cawangan/Unit:</label>
+                                            <label for="last_name" class="h6 mb-7">Cawangan/Unit:</label>
                                             <input type="text" class="form-control" id="last_name" name="Cawangan/Unit" placeholder="">
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         
                                         <div class="form-group col-md-6">
-                                            <label for="phone">No. Tel.:</label>
+                                            <label for="phone" class="h6 mb-7">No. Telefon:</label>
                                             <span class="required">*</span>
                                             <input type="tel" class="form-control" id="phone" name="No.Tel" placeholder="019xxxxxxx" required 
                                             oninvalid="setCustomValidity('Sila isi bahagian ini')"
                                             oninput="setCustomValidity('')" />
                                         </div> 
                                         <div class="form-group col-md-6">
-                                            <label for="email">E-mail:</label>
+                                            <label for="email" class="h6 mb-7">E-mel:</label>
                                             <span class="required">*</span>
                                             <input type="email" class="form-control" id="email" name="E-mail" placeholder="" required 
                                             oninvalid="setCustomValidity('Sila isi bahagian ini')"
@@ -110,47 +110,46 @@ span[class="required"] {
                                     </div>
                                     <div class="form-row">
                                         
-                                            <center><label for="first_name">Tajuk Mesyuarat/ Taklimat/ Kursus/ Bengkel:</label></center>
+                                            <center><label for="first_name" class="h6 mb-7">Tajuk Mesyuarat/ Taklimat/ Kursus/ Bengkel:</label></center>
                                             <span class="required">*</span>
                                             <input type="text" class="form-control" id="first_name" name="Tajuk Mesyuarat/ Taklimat/ Kursus/ Bengkel" placeholder="" required 
                                             oninvalid="setCustomValidity('Sila isi bahagian ini')"
-                                            oninput="setCustomValidity('')" />
-                                                
+                                            oninput="setCustomValidity('')" />  
                                     </div>
 
                                     <div class="form-row">
                                         <div class="form-group col-md-3">
-                                            <label for="dateOfBirth">Tarikh Mula:</label>
+                                            <label for="dateOfBirth" class="h6 mb-7">Tarikh Mula:</label>
                                             <span class="required">*</span>
                                             <input type="date" class="form-control" id="demo" name="Tarikh" required 
                                             oninvalid="setCustomValidity('Sila isi bahagian ini')"
                                             oninput="setCustomValidity('')" />
                                         </div>
                                         <div class="form-group col-md-3">
-                                            <label for="dateOfBirth">Tarikh Tamat:</label>
+                                            <label for="dateOfBirth" class="h6 mb-7">Tarikh Tamat:</label>
                                             <span class="required">*</span>
                                             <input type="date" class="form-control" id="demo2" name="Tarikh" required 
                                             oninvalid="setCustomValidity('Sila isi bahagian ini')"
                                             oninput="setCustomValidity('')" />
                                         </div>
                                         <div class="form-group col-md-3">
-                                            <label for="last_name">Waktu Mula:</label>
+                                            <label for="last_name" class="h6 mb-7">Waktu Mula:</label>
                                             <span class="required">*</span>
                                             <input type="time" class="form-control" id="time" name="Waktu Mula" placeholder="" required 
                                             oninvalid="setCustomValidity('Sila isi bahagian ini')"
                                             oninput="setCustomValidity('')" />
                                         </div>
-                                        <div class="form-group col-md-3">
-                                            <label for="last_name">Waktu Selesai:</label>
+                                        <div class="form-group col-md-3" >
+                                            <label for="last_name" class="h6 mb-7">Waktu Selesai:</label>
                                             <span class="required">*</span>
-                                            <input type="time" class="form-control" id="time" name="Waktu Tamat" placeholder="" required 
+                                            <input type="time" class="form-control" id="time" name="Waktu Selesai" placeholder="" required 
                                             oninvalid="setCustomValidity('Sila isi bahagian ini')"
                                             oninput="setCustomValidity('')" />
                                         </div>
                                     </div>   
                                     <div class="form-row">
-                                        <div class="form-group col-md-6">
-                                            <label for="last_name">Bilik mesyuarat yang ingin ditempah:</label>
+                                        <div class="form-group col-md-6" >
+                                            <label for="last_name" class="h6 mb-7">Bilik mesyuarat yang ingin ditempah:</label>
                                             <span class="required">*</span><br>
                                             <select class="form-control col-md-3" aria-label=".form-select-lg example" name="Bilik Mesyuarat" id="BM" required 
                                             oninvalid="setCustomValidity('Sila isi bahagian ini')"
