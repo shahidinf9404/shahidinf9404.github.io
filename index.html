@@ -74,7 +74,7 @@ span[class="required"] {
     <div class="container">
         <div class="row">
             <div class="col">         
-                <form name="submit-to-google-sheet">
+                <form id="myForm" onsubmit="handleFormSubmit()" name="submit-to-google-sheet">
                                     <center><img src="https://drive.google.com/uc?export=view&id=1WTcS6yQoFEWiXVsTmJoqjHzmGzNMnjc4" width="200px" height="auto" alt="image"></center>
                                     <p class="h4 mb-4 text-center">Borang Tempahan Bilik Mesyuarat</p>
         
@@ -108,15 +108,47 @@ span[class="required"] {
                                             oninput="setCustomValidity('')" />
                                         </div>      
                                     </div>
+                                    <div class="form-row">
+                                        
+                                            <center><label for="first_name">Tajuk Mesyuarat/ Taklimat/ Kursus/ Bengkel:</label></center>
+                                            <span class="required">*</span>
+                                            <input type="text" class="form-control" id="first_name" name="Tajuk Mesyuarat/ Taklimat/ Kursus/ Bengkel" placeholder="" required 
+                                            oninvalid="setCustomValidity('Sila isi bahagian ini')"
+                                            oninput="setCustomValidity('')" />
+                                                
+                                    </div>
 
                                     <div class="form-row">
-                                        <div class="form-group col-md-6">
-                                            <label for="dateOfBirth">Tarikh:</label>
+                                        <div class="form-group col-md-3">
+                                            <label for="dateOfBirth">Tarikh Mula:</label>
                                             <span class="required">*</span>
                                             <input type="date" class="form-control" id="demo" name="Tarikh" required 
                                             oninvalid="setCustomValidity('Sila isi bahagian ini')"
                                             oninput="setCustomValidity('')" />
                                         </div>
+                                        <div class="form-group col-md-3">
+                                            <label for="dateOfBirth">Tarikh Tamat:</label>
+                                            <span class="required">*</span>
+                                            <input type="date" class="form-control" id="demo2" name="Tarikh" required 
+                                            oninvalid="setCustomValidity('Sila isi bahagian ini')"
+                                            oninput="setCustomValidity('')" />
+                                        </div>
+                                        <div class="form-group col-md-3">
+                                            <label for="last_name">Waktu Mula:</label>
+                                            <span class="required">*</span>
+                                            <input type="time" class="form-control" id="time" name="Waktu Mula" placeholder="" required 
+                                            oninvalid="setCustomValidity('Sila isi bahagian ini')"
+                                            oninput="setCustomValidity('')" />
+                                        </div>
+                                        <div class="form-group col-md-3">
+                                            <label for="last_name">Waktu Selesai:</label>
+                                            <span class="required">*</span>
+                                            <input type="time" class="form-control" id="time" name="Waktu Selesai" placeholder="" required 
+                                            oninvalid="setCustomValidity('Sila isi bahagian ini')"
+                                            oninput="setCustomValidity('')" />
+                                        </div>
+                                    </div>   
+                                    <div class="form-row">
                                         <div class="form-group col-md-6">
                                             <label for="last_name">Bilik mesyuarat yang ingin ditempah:</label>
                                             <span class="required">*</span><br>
@@ -125,41 +157,17 @@ span[class="required"] {
                                             oninput="setCustomValidity('')" />
                                                 <option value="BM1">BM1</option>
                                                 <option value="BM2">BM2</option>
-                                                <option value="BM3">BM3</option>
+                                                <option value="BM3" disabled="">BM3</option>
                                                 <option value="BM4">BM4</option>
                                             </select>
                                         </div>
-                                    </div>   
-                                    <div class="form-row">
-                                        <div class="form-group col-md-6">
-                                            <label for="last_name">Waktu Mula:</label>
-                                            <span class="required">*</span>
-                                            <input type="time" class="form-control" id="time" name="Waktu Mula" placeholder="" required 
-                                            oninvalid="setCustomValidity('Sila isi bahagian ini')"
-                                            oninput="setCustomValidity('')" />
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label for="first_name">Tajuk Mesyuarat/ Taklimat/ Kursus/ Bengkel:</label>
-                                            <span class="required">*</span>
-                                            <input type="text" class="form-control" id="first_name" name="Tajuk Mesyuarat/ Taklimat/ Kursus/ Bengkel" placeholder="" required 
-                                            oninvalid="setCustomValidity('Sila isi bahagian ini')"
-                                            oninput="setCustomValidity('')" />
-                                        </div>           
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="form-group col-md-6">
-                                            <label for="last_name">Waktu Selesai:</label>
-                                            <span class="required">*</span>
-                                            <input type="time" class="form-control" id="time" name="Waktu Selesai" placeholder="" required 
-                                            oninvalid="setCustomValidity('Sila isi bahagian ini')"
-                                            oninput="setCustomValidity('')" />
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label for="last_name">lain-lain keperluan tambahan yang diperlukan(Nyatakan):</label>
-                                            <input type="text" class="form-control" id="lain" name="lain" placeholder="Cth: Komputer Riba, Papan Putih, Projektor LCD/DLP">
-                                        </div>
-                                    </div>
-                                     <br>                     
+                                    </div>       
+                                     <center><input type="checkbox" required 
+                                        oninvalid="setCustomValidity('Sila klik untuk pengesahan maklumat')"
+                                        oninput="setCustomValidity('')" /> Saya dengan ini mematuhi segala peraturan yang ditetapkan dan mengisytiharkan segala maklumat yang diberikan adalah benar. Sekiranya didapati maklumat ini tidak benar, saya boleh dikenakan tindakan mengikut peraturan.</center> <br>                 
+                    
+                    <center><label style="color: #da0606;">Sila klik butang "Hantar" sekali sahaja dan tunggu sehingga perkataan permohonan berjaya dihantar keluar.</label></center>
+    
                     <center><input type="submit" name="submit" value="Hantar"></center><br>
                     <center><span id="success" style="color: aliceblue; background-color: #14bd76;"></span></center>
                     <div class="loader"></div>
@@ -215,8 +223,8 @@ span[class="required"] {
     </script>
     <script>
         var todayDate = new Date();
-        var month = todayDate.getMonth() + 3; //04 - current month
-        var year = todayDate.getUTCFullYear(); //2021 - current year
+        var month = todayDate.getMonth() + 3; //03 - current month
+        var year = todayDate.getUTCFullYear(); //2023 - current year
         var tdate = todayDate.getDate(); // 27 - current date 
         if (month < 10) {
             month = "0" + month //'0' + 4 = 04
@@ -227,6 +235,37 @@ span[class="required"] {
         var maxDate = year + "-" + month + "-" + tdate;
         document.getElementById("demo").setAttribute("max", maxDate);
         console.log(maxDate);
-    </script>      
+    </script>
+    <script>
+        var date = new Date();
+        var tdate = date.getDate();
+        var month = date.getMonth() + 1;
+        if(tdate < 10){
+            tdate + '0' +tdate;
+        }
+        if(month < 10){
+            month = "0" + month;
+        }
+        var year = date.getUTCFullYear();
+        var minDate = year + "-" + month + "-" + tdate;
+        document.getElementById("demo2").setAttribute('min', minDate)
+        console.log(minDate);
+    
+    </script>
+    <script>
+        var todayDate = new Date();
+        var month = todayDate.getMonth() + 3; //03 - current month
+        var year = todayDate.getUTCFullYear(); //2023 - current year
+        var tdate = todayDate.getDate(); // 27 - current date 
+        if (month < 10) {
+            month = "0" + month //'0' + 4 = 04
+        }
+        if (tdate < 10) {
+            tdate = "0" + tdate;
+        }
+        var maxDate = year + "-" + month + "-" + tdate;
+        document.getElementById("demo2").setAttribute("max", maxDate);
+        console.log(maxDate);
+    </script>
 </body>
 </html>
