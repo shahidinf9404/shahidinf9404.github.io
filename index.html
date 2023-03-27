@@ -8,11 +8,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
  integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" 
 crossorigin="anonymous">
+
 <style>
-    .container {
+.container {
     background-color: lightgray;
     padding: 50px;
     outline: 3px dashed #000000;
+    box-shadow: 5px 5px 10px black;
     outline-offset: -30px;
     text-align: ;
 }
@@ -68,16 +70,17 @@ span[class="required"] {
 }
 
 </style>
-
+<script>//Design By Ahmad Shahidin Ashraf Bin Mohd Nor</script>
 </head>
 <body>
+    <br>
     <div class="container">
         <div class="row">
             <div class="col">         
                 <form id="myForm" onsubmit="handleFormSubmit()" name="submit-to-google-sheet">
                                     <center><img src="https://drive.google.com/uc?export=view&id=1WTcS6yQoFEWiXVsTmJoqjHzmGzNMnjc4" width="200px" height="auto" alt="image"></center>
                                     <p class="h4 mb-4 text-center">BORANG TEMPAHAN BILIK MESYUARAT<br>PROGRAM PERUBATAN</p>
-        
+                                    
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
                                             <label for="first_name" class="h6 mb-7">Nama Pemohon:</label>
@@ -91,8 +94,8 @@ span[class="required"] {
                                             <input type="text" class="form-control" id="last_name" name="Cawangan/Unit" placeholder="">
                                         </div>
                                     </div>
+
                                     <div class="form-row">
-                                        
                                         <div class="form-group col-md-6">
                                             <label for="phone" class="h6 mb-7">No. Telefon:</label>
                                             <span class="required">*</span>
@@ -108,6 +111,7 @@ span[class="required"] {
                                             oninput="setCustomValidity('')" />
                                         </div>      
                                     </div>
+
                                     <div class="form-row">
                                         <div class="form-group col-md-12">
                                             <label for="first_name" class="h6 mb-7">Tajuk Mesyuarat/ Taklimat/ Kursus/ Bengkel:</label>
@@ -122,14 +126,14 @@ span[class="required"] {
                                         <div class="form-group col-md-3">
                                             <label for="dateOfBirth" class="h6 mb-7">Tarikh Mula:</label>
                                             <span class="required">*</span>
-                                            <input type="date" class="form-control" id="demo" name="Tarikh" required 
+                                            <input type="date" class="form-control" id="demo" name="Tarikh Mula" required 
                                             oninvalid="setCustomValidity('Sila isi bahagian ini')"
                                             oninput="setCustomValidity('')" />
                                         </div>
                                         <div class="form-group col-md-3">
                                             <label for="dateOfBirth" class="h6 mb-7">Tarikh Tamat:</label>
                                             <span class="required">*</span>
-                                            <input type="date" class="form-control" id="demo2" name="Tarikh" required 
+                                            <input type="date" class="form-control" id="demo2" name="Tarikh Tamat" required 
                                             oninvalid="setCustomValidity('Sila isi bahagian ini')"
                                             oninput="setCustomValidity('')" />
                                         </div>
@@ -147,7 +151,8 @@ span[class="required"] {
                                             oninvalid="setCustomValidity('Sila isi bahagian ini')"
                                             oninput="setCustomValidity('')" />
                                         </div>
-                                    </div>   
+                                    </div> 
+
                                     <div class="form-row">
                                         <div class="form-group col-md-6" >
                                             <label for="last_name" class="h6 mb-7">Bilik mesyuarat yang ingin ditempah:</label>
@@ -161,7 +166,8 @@ span[class="required"] {
                                                 <option value="BM4">BM4</option>
                                             </select>
                                         </div>
-                                    </div>       
+                                    </div>
+                                           
                                      <center><input type="checkbox" required 
                                         oninvalid="setCustomValidity('Sila klik untuk pengesahan maklumat')"
                                         oninput="setCustomValidity('')" /> Saya dengan ini mematuhi segala peraturan yang ditetapkan dan mengisytiharkan segala maklumat yang diberikan adalah benar. Sekiranya didapati maklumat ini tidak benar, saya boleh dikenakan tindakan mengikut peraturan.</center> <br>                 
