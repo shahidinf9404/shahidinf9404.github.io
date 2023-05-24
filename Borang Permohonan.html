@@ -16,8 +16,9 @@ crossorigin="anonymous">
     outline: 3px dashed #000000;
     box-shadow: 5px 5px 10px black;
     outline-offset: -30px;
-    text-align: ;
+    text-align:
 }
+
 input[type=submit] {
     padding: 8px 50px;
     background: #2286c9;
@@ -85,13 +86,13 @@ span[class="required"] {
                                         <div class="form-group col-md-6">
                                             <label for="first_name" class="h6 mb-7">Nama Pemohon:</label>
                                             <span class="required">*</span>
-                                            <input type="text" class="form-control" id="first_name" name="Nama Pemohon" placeholder="" required 
+                                            <input type="text" class="form-control" id="Name" onblur="mycapitalized()" name="Nama Pemohon" placeholder="" required 
                                             oninvalid="setCustomValidity('Sila isi bahagian ini')"
                                             oninput="setCustomValidity('')" />
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label for="last_name" class="h6 mb-7">Cawangan/Unit:</label>
-                                            <input type="text" class="form-control" id="last_name" name="Cawangan/Unit" placeholder="">
+                                            <input type="text" class="form-control" id="Cawangan" name="Cawangan/Unit" onblur="mycapitalized()" placeholder="">
                                         </div>
                                     </div>
 
@@ -106,7 +107,7 @@ span[class="required"] {
                                         <div class="form-group col-md-6">
                                             <label for="email" class="h6 mb-7">E-mel:</label>
                                             <span class="required">*</span>
-                                            <input type="email" class="form-control" id="email" name="E-mel" placeholder="@moh.gov.my" required 
+                                            <input type="email" class="form-control" id="email" name="E-mel" placeholder="" required 
                                             oninvalid="setCustomValidity('Sila isi bahagian ini')"
                                             oninput="setCustomValidity('')" />
                                         </div>      
@@ -116,7 +117,7 @@ span[class="required"] {
                                         <div class="form-group col-md-12">
                                             <label for="first_name" class="h6 mb-7">Tajuk Mesyuarat/ Taklimat/ Kursus/ Bengkel:</label>
                                             <span class="required">*</span>
-                                            <input type="text" class="form-control" id="first_name" name="Tajuk Mesyuarat/ Taklimat/ Kursus/ Bengkel" placeholder="" required 
+                                            <input type="text" class="form-control" id="Tajuk" onblur="mycapitalized()" name="Tajuk Mesyuarat/ Taklimat/ Kursus/ Bengkel" placeholder="" required 
                                             oninvalid="setCustomValidity('Sila isi bahagian ini')"
                                             oninput="setCustomValidity('')" />
                                         </div>  
@@ -273,5 +274,17 @@ span[class="required"] {
         document.getElementById("demo2").setAttribute("max", maxDate);
         console.log(maxDate);
     </script>
+    <script>
+        function mycapitalized()
+        {
+        var a = document.getElementById("Name")
+        a.value=a.value.toUpperCase();
+        var b = document.getElementById("Cawangan")
+        b.value=b.value.toUpperCase();
+        var c = document.getElementById("Tajuk")
+        c.value=c.value.toUpperCase();        
+         }       
+    </script>
+
 </body>
 </html>
