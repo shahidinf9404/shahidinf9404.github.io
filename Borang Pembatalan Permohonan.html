@@ -14,8 +14,8 @@ crossorigin="anonymous">
     padding: 50px;
     outline: 3px dashed #000000;
     outline-offset: -30px;
-    text-align: ;
 }
+
 input[type=submit] {
     padding: 8px 50px;
     background: #2286c9;
@@ -81,24 +81,24 @@ span[class="required"] {
                                     <center><img src="https://drive.google.com/uc?export=view&id=1WTcS6yQoFEWiXVsTmJoqjHzmGzNMnjc4" width="200px" height="auto" alt="image"></center>
                                     <p class="h4 mb-4 text-center">Borang Pembatalan Tempahan Bilik Mesyuarat</p>
         
-                                   <div class="form-row">
+                                    <div class="form-row">
                                         <div class="form-group col-md-6">
                                             <label for="first_name">Nama:</label>
                                             <span class="required">*</span>
-                                            <input type="text" class="form-control" id="first_name" name="Nama Pemohon" placeholder="" required
+                                            <input type="text" class="form-control" id="Name" name="Nama Pemohon" onblur="mycapitalized()" placeholder="Nama" required
                                             oninvalid="setCustomValidity('Sila isi bahagian ini')"
                                             oninput="setCustomValidity('')" />
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label for="first_name">No. Rujukan:</label>
                                             <span class="required">*</span>
-                                            <input type="text" class="form-control" id="first_name" name="No. Rujukan" placeholder="STBM/PP-XXXXXX" required
+                                            <input type="text" class="form-control" id="Rujukan" name="No. Rujukan" onblur="mycapitalized()" placeholder="STBM/PP-XXXXXX" required
                                             oninvalid="setCustomValidity('Sila isi bahagian ini')"
                                             oninput="setCustomValidity('')" />
                                         </div>
                                     </div>
+
                                     <div class="form-row">
-                                        
                                         <div class="form-group col-md-6">
                                             <label for="phone">No. Tel.:</label>
                                             <span class="required">*</span>
@@ -112,12 +112,12 @@ span[class="required"] {
                                             <input type="email" class="form-control" id="email" name="E-mel" placeholder="@moh.gov.my" required
                                             oninvalid="setCustomValidity('Sila isi bahagian ini')"
                                             oninput="setCustomValidity('')" />
-                                        </div>       
+                                        </div>      
                                     </div>
 
                                     <label>Sebab Pembatalan:</label>
                                     <span class="required">*</span>
-                                    <input type="text" class="form-control" name="Sebab Pembatalan" placeholder="Nyatakan" required
+                                    <input type="text" class="form-control" id="Sebab" name="Sebab Pembatalan" onblur="mycapitalized()" placeholder="Nyatakan" required
                                         oninvalid="setCustomValidity('Sila isi bahagian ini')"
                                         oninput="setCustomValidity('')" />
                                     </input><br><br>
@@ -157,6 +157,17 @@ span[class="required"] {
                 document.body.removeChild("loader");
             })
         })
-    </script>      
+    </script> 
+    <script>
+        function mycapitalized()
+        {
+        var a = document.getElementById("Name")
+        a.value=a.value.toUpperCase();
+        var b = document.getElementById("Rujukan")
+        b.value=b.value.toUpperCase();
+        var c = document.getElementById("Sebab")
+        c.value=c.value.toUpperCase();        
+         }       
+    </script>     
 </body>
 </html>
